@@ -13,6 +13,22 @@ Feel free to use anything you want:
 - CSS Framework or preprocessors: Sass, bootstrap, tailwind
 - Docker based, codepen, heroku, whatever.
 
+!!! For submission, create a pull request on this repository !!!
+
+**For information/questions, contact us**
+- anthony.richir@proxistore.com
+- anthony.malcourant@proxistore.com
+
+## Evaluation
+
+- HTML/CSS
+- JavaScript
+- Creativity
+- Efficiency
+
+We'll review your codebase and ask you some question/improvement about what you produced.
+You'll be able to justify things you'd not time to finish of course.
+
 ## Campaign listing
 
 List all available campaigns.  
