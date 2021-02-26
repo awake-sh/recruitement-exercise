@@ -8,6 +8,11 @@ As an exercise we ask to reinvent two pages which exist in our application:
 The exercise is quite open and feel free to go as further as you can/want.
 We develop some mock endpoints in order to dynamize your pages.
 
+Feel free to use anything you want:
+- Framework: VueJs, React, Angular or VanillaJS
+- CSS Framework or preprocessors: Sass, bootstrap, tailwind
+- Docker based, codepen, heroku, whatever.
+
 ## Campaign listing
 
 List all available campaigns.  
