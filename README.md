@@ -236,4 +236,6 @@ val segments: Set<String> = setOf(
 
 # Inspiration
 ![alt text](segment-inspiration.png)
-
+![alt text](stats-2-inspiration.png)
+![alt text](stats-inspiration.png)
+![alt text](timeslots-inspiration.png)
