@@ -235,5 +235,5 @@ val segments: Set<String> = setOf(
 - [ ] It should display statistics and other information which were not available on the listing page.
 
 # Inspiration
-
+![alt text](segment-inspiration.png)
 
