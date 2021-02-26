@@ -1,4 +1,4 @@
-## recruitement-exercise
+# Proxistore exercise
 
 As frontend developer/designer, you should be able to create HTML/CSS pages and integrate some dynamic data thanks to Javascript.
 As an exercise we ask to reinvent two pages which exist in our application:
@@ -9,17 +9,21 @@ The exercise is quite open and feel free to go as further as you can/want.
 We develop some mock endpoints in order to dynamize your pages.
 
 ## Campaign listing
+
 List all available campaigns.  
 **Endpoint**: https://proxistore-campaign-qof7m4cq5q-ew.a.run.app/campaigns  
 **Method**: GET.  
+
 **HTTP Parameters**:  
+
 | Name      | Description |
 | ----------- | ----------- |
 | search      | Filter campaign by id (default null)         |
 | page   | Use for pagination. Define the page number to retrieve (default 1)         |
 | size   | Use for pagination. Define the number of element by page. (default 10)         |
 
-# Campaign details
+## Campaign details
+
 Get a campaign according to its identifier.  
 **Endpoint**: https://proxistore-campaign-qof7m4cq5q-ew.a.run.app/campaigns/:id   
 **Method**: GET  
@@ -27,11 +31,50 @@ Get a campaign according to its identifier.
 ## Data  
 
 JSON format is used as returned value. A campaign is defined by:
-| Element | Description |
+| Name | Description |
 | ------- | ----------- |
 | **id** | Unique idenfifier (UUID) |
 | **details** | Common details about the campaign |
+| **statistics** | Campaign statistics such as views and clicks |
+| **diffusion** | Information about campaign diffusion. When is it live? |
+| **targets** | Campaign could be specific (In our example, for segments) |
 
+### Details
+| Name | Description |
+| ------- | ----------- |
+| **name** | name |
+| **source** | source (enum: ADVERTISER, RETAILER, MEDIA_AGENCY) |
+| **status** | status (enum: DRAFT, RUNNING, CANCELLED, FINISHED) |
+| **budget** | budget amount + currency (enum: EUR, USD) |
+
+### statistics
+| Name | Description |
+| ------- | ----------- |
+| **views** | Views by devices. (Expected = total, Effective = real, Unique = unique) |
+| **clicks** | count + unique |
+
+### diffusion
+| Name | Description |
+| ------- | ----------- |
+| **period** | A campaign is under diffusion during a period of time (from / to) |
+| **slots** | A campaign could be under diffusion a specific hours/days |
+
+### Segments
+Segments are hardcoded in our example:
+```
+val segments: Set<String> = setOf(
+            "animal",
+            "sport",
+            "car",
+            "food",
+            "nightlife",
+            "art",
+            "culture",
+            "technology",
+        )
+```
+
+## JSON example
 ```
 {
     "id": {
@@ -171,3 +214,21 @@ JSON format is used as returned value. A campaign is defined by:
     }
 }
 ```
+
+# Page to create
+
+## Listing
+
+- [ ] It should display information such as identifier, name, status.
+- [ ] It should be pageable.
+- [ ] It should be searchable.
+
+## Details 
+
+- [ ] It should display segments and a way to select/unselect them.
+- [ ] It should display slots table and a way to modify it.
+- [ ] It should display statistics and other information which were not available on the listing page.
+
+# Inspiration
+
+
