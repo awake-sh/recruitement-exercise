@@ -1,0 +1,32 @@
+@use '../../../../lib/colors';
+@use '../../../../lib/fonts';
+@use '../../../../lib/mixin';
+@use './slot';
+
+.slots__row {
+  display: flex;
+
+  .row__title {
+    width: 7em;
+    min-width: 7em;
+    padding-left: 1em;
+    color: colors.$gray-3;
+  }
+
+  .row__brick__li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+    display: flex;
+    background-color: colors.$gray-1;
+
+    .row__brick__el {
+      flex-basis: 0;
+      flex: 1 1 0px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

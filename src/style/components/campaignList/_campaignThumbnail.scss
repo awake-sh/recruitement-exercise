@@ -1,0 +1,113 @@
+@use '../../lib/mixin';
+@use '../../lib/colors';
+@use '../../lib/fonts';
+
+$thumbnail-border-thickness: 1px;
+$thumbnail-padding: 1rem;
+
+.campaignThumbnail {
+  display: block;
+  position: relative;
+  background-color: white;
+  border-radius: 0.5rem;
+  border: solid $thumbnail-border-thickness white;
+  padding: $thumbnail-padding;
+  text-decoration: none;
+  -webkit-box-shadow: 5px 0px 18px 5px rgba(0, 0, 0, 0.06);
+  box-shadow: 5px 0px 18px 5px rgba(0, 0, 0, 0.06);
+
+  * {
+    margin: 0;
+  }
+
+  .campaign__status {
+    background-color: colors.$gray-1;
+    color: colors.$gray-2;
+    padding: 0.25rem 1rem;
+    display: inline-block;
+    border-radius: 1rem;
+    font-weight: 500;
+    font-size: fonts.$font-size-m1;
+    /*
+    &--draft {
+    }
+    &--running {
+      background-color: aqua;
+    }
+    &--cancelled {
+      background-color: green;
+    }
+    &--finished {
+      background-color: yellow;
+    }
+    */
+  }
+
+  .campaign__name {
+    color: colors.$gray-3;
+    font-size: 1rem;
+  }
+
+  .campaign__id {
+    font-size: fonts.$font-size-m2;
+    color: colors.$gray-3;
+  }
+
+  .thumbnail__options {
+  }
+
+  &:hover {
+    border-color: colors.$gray-3;
+  }
+}
+
+@include mixin.smaller-than-desktop {
+  .campaignThumbnail {
+    .campaign__status {
+      margin-bottom: 2rem;
+    }
+
+    .campaign__name {
+      margin-bottom: 1rem;
+    }
+
+    .thumbnail__options {
+      position: absolute;
+      right: $thumbnail-padding;
+      top: $thumbnail-padding;
+    }
+  }
+}
+
+@include mixin.desktop {
+  .campaignThumbnail {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+
+    * {
+      grid-row: 1/3;
+    }
+
+    .campaign__status {
+      grid-column: -5/-2;
+      justify-self: start;
+    }
+
+    .campaign__name {
+      grid-column: 1/8;
+      grid-row: 1/2;
+    }
+
+    .campaign__id {
+      grid-column: 1/8;
+      grid-row: 2/3;
+    }
+
+    .thumbnail__options {
+      grid-column: -1/-2;
+      justify-self: end;
+    }
+  }
+}

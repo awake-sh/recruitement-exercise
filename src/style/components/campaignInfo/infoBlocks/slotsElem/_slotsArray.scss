@@ -1,0 +1,31 @@
+@use '../../../../lib/colors';
+@use '../../../../lib/fonts';
+@use '../../../../lib/mixin';
+@use './slotsRow';
+
+.slots__array {
+  //max-width: 200px;
+  max-width: 100%;
+  overflow: scroll;
+  position: relative;
+
+  &__title {
+    color: colors.$gray-3;
+  }
+
+  .slots__row__li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: colors.$gray-2;
+    min-width: 1000px;
+  }
+}
+
+@include mixin.desktop {
+  .slots__array {
+    overflow: auto;
+    .slots__row__li {
+    }
+  }
+}

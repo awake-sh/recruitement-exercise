@@ -1,0 +1,12 @@
+@use './lib/fonts';
+@use './components/navbar/navbar';
+@use './components/pages/pages';
+@use './components/btn/btn';
+@use './components/campaignList/campaignList';
+@use './components/campaignInfo/campaignInfo';
+@use './components/controllers/controller';
+
+body {
+  margin: 0;
+  padding: 0;
+}

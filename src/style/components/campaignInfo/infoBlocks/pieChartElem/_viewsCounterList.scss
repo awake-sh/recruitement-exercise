@@ -1,0 +1,34 @@
+@use '../../../../lib/colors';
+@use '../../../../lib/fonts';
+@use '../../../../lib/mixin';
+@use './viewsCounter';
+
+.views__counter__li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  .views__counter__el {
+    margin-bottom: 1rem;
+
+    &--mobile {
+      color: colors.$orange-1;
+    }
+
+    &--desktop {
+      color: colors.$orange-2;
+    }
+
+    &--tablet {
+      color: colors.$orange-3;
+    }
+
+    &--other {
+      color: colors.$orange-4;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

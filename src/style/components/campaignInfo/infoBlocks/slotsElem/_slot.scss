@@ -1,0 +1,54 @@
+@use '../../../../lib/colors';
+@use '../../../../lib/fonts';
+@use '../../../../lib/mixin';
+
+$slot-size: 1.5rem;
+
+.slot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  pointer-events: all;
+
+  .slot__state {
+    height: $slot-size;
+    width: $slot-size;
+    display: flex;
+    background-color: colors.$gray-2;
+    border-radius: 0.25rem;
+
+    svg {
+      opacity: 0;
+      height: 120%;
+      width: 120%;
+      align-self: center;
+    }
+  }
+
+  &:hover {
+    .slot__state {
+      background-color: colors.$gray-3;
+    }
+  }
+
+  &--checked {
+    background-color: colors.$gray-3;
+
+    .slot__state {
+      background-color: white;
+      svg {
+        opacity: 1;
+        fill: colors.$gray-3;
+      }
+    }
+
+    &:hover {
+      .slot__state {
+        background-color: colors.$gray-2;
+      }
+    }
+  }
+}

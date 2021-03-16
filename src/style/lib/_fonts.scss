@@ -1,0 +1,22 @@
+$font-size-rem: 18px;
+$font-scaling-ratio: 1.15;
+
+@function getScaledFont($base, $ratio) {
+  @return $base * $ratio;
+}
+
+$font-size-m1: getScaledFont($font-size-rem, 1 / $font-scaling-ratio);
+$font-size-m2: getScaledFont($font-size-m1, 1 / $font-scaling-ratio);
+$font-size-m3: getScaledFont($font-size-m2, 1 / $font-scaling-ratio);
+
+$font-size-2: getScaledFont($font-size-rem, $font-scaling-ratio);
+$font-size-3: getScaledFont($font-size-2, $font-scaling-ratio);
+$font-size-4: getScaledFont($font-size-3, $font-scaling-ratio);
+$font-size-5: getScaledFont($font-size-4, $font-scaling-ratio);
+$font-size-6: getScaledFont($font-size-5, $font-scaling-ratio);
+$font-size-7: getScaledFont($font-size-6, $font-scaling-ratio);
+
+html {
+  font-size: $font-size-rem;
+  font-family: "Poppins", sans-serif;
+}
