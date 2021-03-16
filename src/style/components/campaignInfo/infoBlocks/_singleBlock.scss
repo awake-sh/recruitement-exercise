@@ -1,0 +1,13 @@
+@use '../../../lib/colors';
+@use '../../../lib/fonts';
+@use '../../../lib/mixin';
+
+.singleBlock {
+  .singleInfo {
+    font-size: fonts.$font-size-4;
+    font-weight: 700;
+    color: colors.$gray-3;
+    text-align: right;
+    padding-right: 1rem;
+  }
+}

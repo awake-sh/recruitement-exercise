@@ -1,0 +1,19 @@
+@use '../../lib/colors';
+@use '../../lib/fonts';
+@use '../../lib/mixin';
+
+$btn-options-size: 2rem;
+
+.btn--options {
+  width: $btn-options-size;
+  height: $btn-options-size;
+  border-radius: $btn-options-size / 2;
+  border: none;
+  background-color: transparent;
+
+  svg {
+    height: 100%;
+    width: 100%;
+    fill: colors.$gray-2;
+  }
+}

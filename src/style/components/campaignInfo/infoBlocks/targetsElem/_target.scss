@@ -1,0 +1,43 @@
+@use '../../../../lib/colors';
+@use '../../../../lib/fonts';
+@use '../../../../lib/mixin';
+
+$target-height: 1.5rem;
+$close-btn-size: 0.63em;
+
+.target {
+  display: flex;
+  height: $target-height;
+  border-radius: $target-height / 2;
+  border: solid 1px black;
+  padding: 0 0.5rem;
+  align-items: center;
+  margin: 0 0.5rem 0.5rem 0;
+  font-size: fonts.$font-size-m2;
+
+  &__value {
+    margin: 0;
+  }
+
+  .target__value {
+    margin-right: 0.5em;
+  }
+
+  .btn {
+    background-color: transparent;
+    border: none;
+    width: $close-btn-size;
+    max-width: $close-btn-size;
+    height: $close-btn-size;
+    max-height: $close-btn-size;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}

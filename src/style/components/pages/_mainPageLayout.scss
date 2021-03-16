@@ -1,0 +1,30 @@
+@use '../../lib/mixin';
+@use '../../lib/fonts';
+@use '../../lib/colors';
+
+.mainPageLayout {
+  min-height: 100vh;
+  background-color: colors.$gray-1;
+  .mainPageLayout__page {
+    width: 100%;
+    .page__content {
+      margin: 0 auto;
+      padding: 1rem 1rem;
+      max-width: 1080px;
+    }
+  }
+}
+
+@include mixin.desktop {
+  .mainPageLayout {
+    display: flex;
+
+    .mainPageLayout__page {
+      flex-grow: 1;
+      max-height: 100vh;
+      overflow-y: scroll;
+      justify-self: center;
+      align-self: start;
+    }
+  }
+}

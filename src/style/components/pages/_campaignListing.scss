@@ -1,0 +1,30 @@
+@use '../../lib/mixin';
+@use '../../lib/fonts';
+
+.campaignListing {
+  .campaignListing__head {
+    &::after {
+      content: "";
+      display: block;
+      height: 1px;
+      background-color: black;
+    }
+
+    .title--page {
+      margin-top: 0;
+    }
+  }
+}
+
+@include mixin.tablet {
+  .campaignListing {
+    .campaignListing__head {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      .btn--rectangle {
+      }
+    }
+  }
+}

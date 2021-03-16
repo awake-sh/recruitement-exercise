@@ -1,0 +1,26 @@
+@use '../../lib/colors';
+@use '../../lib/mixin';
+@use '../../lib/fonts';
+
+.controller.controller--searchbar {
+  color: colors.$gray-3;
+
+  .controller__svg {
+    margin-right: 0.5rem;
+
+    svg {
+      fill: colors.$gray-3;
+    }
+  }
+  input {
+    font-size: inherit;
+    font-family: "Poppins", sans-serif;
+    background-color: transparent;
+    border: none;
+    pointer-events: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

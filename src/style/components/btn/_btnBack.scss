@@ -1,0 +1,27 @@
+@use '../../lib/colors';
+@use '../../lib/fonts';
+@use '../../lib/mixin';
+
+.btn--back {
+  background: none;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  font-size: fonts.$font-size-m1;
+  font-weight: 600;
+  color: colors.$gray-2;
+
+  .btn__svg {
+    transform: rotate(90deg);
+    margin-right: 0.5em;
+
+    svg {
+      fill: colors.$gray-3;
+    }
+  }
+
+  &:hover {
+    color: colors.$gray-3;
+  }
+}

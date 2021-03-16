@@ -1,0 +1,46 @@
+@use '../../lib/colors';
+@use '../../lib/fonts';
+@use '../../lib/mixin';
+@use './infoBlocks/infoBlock';
+@use './infoBlocks/singleBlock';
+@use './campaignInfoGeneral';
+@use './campaignInfoStats';
+@use './campaignInfoDiffusion';
+
+.campaign__info {
+  display: grid;
+  max-width: 100%;
+  margin-top: 4rem;
+  .title {
+    font-size: fonts.$font-size-6;
+    color: colors.$gray-2;
+  }
+
+  .info__content {
+    display: grid;
+    row-gap: 1rem;
+    column-gap: 1rem;
+    max-width: 100%;
+  }
+}
+
+@include mixin.tablet {
+  .campaign__info {
+    .title {
+      grid-column: 1/-1;
+    }
+
+    .info__content {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@include mixin.tablet-large {
+  .campaign__info {
+    .info__content {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}

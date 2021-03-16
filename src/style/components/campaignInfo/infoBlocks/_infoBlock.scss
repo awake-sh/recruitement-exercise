@@ -1,0 +1,20 @@
+@use '../../../lib/colors';
+@use '../../../lib/fonts';
+@use '../../../lib/mixin';
+
+.info__block {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 1rem;
+  max-width: 100%;
+  -webkit-box-shadow: 5px 0px 18px 5px rgba(0, 0, 0, 0.06);
+  box-shadow: 5px 0px 18px 5px rgba(0, 0, 0, 0.06);
+  align-self: start;
+
+  .info__block__title {
+    margin-top: 0;
+    font-size: fonts.$font-size-2;
+    font-weight: 600;
+    color: colors.$gray-2;
+  }
+}

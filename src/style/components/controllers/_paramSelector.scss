@@ -1,0 +1,71 @@
+@use '../../lib/colors';
+@use '../../lib/mixin';
+@use '../../lib/fonts';
+
+$param-checkbox-size: 1rem;
+$param-el-padding: 0.25rem;
+
+.controller--paramSelector {
+  position: relative;
+
+  .controller__svg {
+    margin-left: 0.5em;
+
+    &--active {
+      transform: rotate(180deg);
+    }
+  }
+
+  .paramSelector__dropdown {
+    position: absolute;
+    top: calc(100% + #{0.5rem});
+    left: 0;
+    background-color: white;
+    width: auto;
+    padding: calc(#{1rem} - #{$param-el-padding}) 1rem 1rem 1rem;
+    border-radius: 0.5rem;
+    cursor: auto;
+    display: flex;
+    flex-direction: column;
+
+    .paramSelector__reset {
+      cursor: pointer;
+      line-height: 81%;
+      width: auto;
+      align-self: flex-end;
+    }
+  }
+}
+
+.param__li {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 calc(#{1rem} - #{$param-el-padding}) 0;
+
+  .param__el {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    padding: $param-el-padding 0;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .param__checkbox {
+      margin-right: 0.5rem;
+      height: $param-checkbox-size;
+      width: $param-checkbox-size;
+      background-color: blue;
+
+      &--checked {
+        background-color: gray;
+      }
+    }
+
+    .param__label {
+      margin: 0;
+      line-height: 1em;
+    }
+  }
+}

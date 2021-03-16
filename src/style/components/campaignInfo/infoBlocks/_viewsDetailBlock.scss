@@ -1,0 +1,48 @@
+@use '../../../lib/colors';
+@use '../../../lib/fonts';
+@use '../../../lib/mixin';
+@use './pieChartElem/pieChartDisplay';
+@use './pieChartElem/viewsCounterList';
+
+.viewsDetailBlock {
+  .views__counter__li {
+  }
+
+  .info__block__content {
+    .controller {
+      margin-bottom: 2rem;
+    }
+
+    .piechart__display {
+      max-width: 360px;
+    }
+  }
+}
+
+@include mixin.tablet {
+  .viewsDetailBlock {
+    grid-column: 1/-1;
+
+    .info__block__content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+
+      *:not(.title) {
+        justify-self: center;
+      }
+
+      .piechart__display {
+        max-width: 80%;
+        grid-column: 1/2;
+        grid-row: 2/3;
+      }
+
+      .views__counter__li {
+        grid-column: 2/3;
+        grid-row: 2/3;
+        align-self: center;
+      }
+    }
+  }
+}
